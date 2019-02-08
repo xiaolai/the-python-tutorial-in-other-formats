@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>14. Interactive Input Editing and History Substitution &#8212; Python Official Tutorial 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="15. Floating Point Arithmetic: Issues and Limitations" href="floatingpoint.html" />
+    <link rel="prev" title="13. What Now?" href="whatnow.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="interactive-input-editing-and-history-substitution">
+<span id="tut-interacting"></span><h1>14. Interactive Input Editing and History Substitution<a class="headerlink" href="#interactive-input-editing-and-history-substitution" title="Permalink to this headline">¶</a></h1>
+<p>Some versions of the Python interpreter support editing of the current input
+line and history substitution, similar to facilities found in the Korn shell and
+the GNU Bash shell.  This is implemented using the <a class="reference external" href="https://tiswww.case.edu/php/chet/readline/rltop.html">GNU Readline</a> library,
+which supports various styles of editing.  This library has its own
+documentation which we won’t duplicate here.</p>
+<div class="section" id="tab-completion-and-history-editing">
+<span id="tut-keybindings"></span><h2>14.1. Tab Completion and History Editing<a class="headerlink" href="#tab-completion-and-history-editing" title="Permalink to this headline">¶</a></h2>
+<p>Completion of variable and module names is
+<a class="reference external" href="https://docs.python.org/3/library/site.html#rlcompleter-config" title="(in Python v3.7)"><span class="xref std std-ref">automatically enabled</span></a> at interpreter startup so
+that the <kbd class="kbd docutils literal notranslate">Tab</kbd> key invokes the completion function; it looks at
+Python statement names, the current local variables, and the available
+module names.  For dotted expressions such as <code class="docutils literal notranslate"><span class="pre">string.a</span></code>, it will evaluate
+the expression up to the final <code class="docutils literal notranslate"><span class="pre">'.'</span></code> and then suggest completions from
+the attributes of the resulting object.  Note that this may execute
+application-defined code if an object with a <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code> method
+is part of the expression.  The default configuration also saves your
+history into a file named <code class="file docutils literal notranslate"><span class="pre">.python_history</span></code> in your user directory.
+The history will be available again during the next interactive interpreter
+session.</p>
+</div>
+<div class="section" id="alternatives-to-the-interactive-interpreter">
+<span id="tut-commentary"></span><h2>14.2. Alternatives to the Interactive Interpreter<a class="headerlink" href="#alternatives-to-the-interactive-interpreter" title="Permalink to this headline">¶</a></h2>
+<p>This facility is an enormous step forward compared to earlier versions of the
+interpreter; however, some wishes are left: It would be nice if the proper
+indentation were suggested on continuation lines (the parser knows if an indent
+token is required next).  The completion mechanism might use the interpreter’s
+symbol table.  A command to check (or even suggest) matching parentheses,
+quotes, etc., would also be useful.</p>
+<p>One alternative enhanced interactive interpreter that has been around for quite
+some time is <a class="reference external" href="https://ipython.org/">IPython</a>, which features tab completion, object exploration and
+advanced history management.  It can also be thoroughly customized and embedded
+into other applications.  Another similar enhanced interactive environment is
+<a class="reference external" href="https://www.bpython-interpreter.org/">bpython</a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python Official Tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="appetite.html">1. Whetting Your Appetite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpreter.html">2. Using the Python Interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">3. An Informal Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">4. More Control Flow Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastructures.html">5. Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">6. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputoutput.html">7. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">8. Errors and Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">9. Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib.html">10. Brief Tour of the Standard Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib2.html">11. Brief Tour of the Standard Library — Part II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="venv.html">12. Virtual Environments and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatnow.html">13. What Now?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14. Interactive Input Editing and History Substitution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tab-completion-and-history-editing">14.1. Tab Completion and History Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternatives-to-the-interactive-interpreter">14.2. Alternatives to the Interactive Interpreter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="floatingpoint.html">15. Floating Point Arithmetic:  Issues and Limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">16. Appendix</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="whatnow.html" title="previous chapter">13. What Now?</a></li>
+      <li>Next: <a href="floatingpoint.html" title="next chapter">15. Floating Point Arithmetic:  Issues and Limitations</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, python.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/interactive.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
